@@ -1,14 +1,15 @@
 ---
+resources:
+  - name: resource-uname
+    type: git
+    source:
+      url: https://github.com/derekhawkesworth-vioohnet/concourse
+      branch: master
+
 jobs:
   - name: job-uname
     public: true
     plan:
+      - get: resource-uname
       - task: uname
-        config:
-          platform: linux
-          image_resource:
-            type: docker-image
-            source: {repository: ubuntu}
-          run:
-            path: uname
-            args: [-a]
+        file: pipeline2.yml

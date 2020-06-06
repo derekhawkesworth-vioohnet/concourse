@@ -3,7 +3,7 @@ resources:
   - name: resource-uname
     type: git
     source:
-      url: https://github.com/derekhawkesworth-vioohnet/concourse.git
+      uri: https://github.com/derekhawkesworth-vioohnet/concourse.git
       branch: master
 
 jobs:

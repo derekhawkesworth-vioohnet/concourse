@@ -12,4 +12,4 @@ jobs:
     plan:
       - get: resource-uname
       - task: uname
-        file: resource-uname/pipeline.yml
+        file: resource-uname/task.yml

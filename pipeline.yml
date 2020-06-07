@@ -7,14 +7,15 @@ resources:
       branch: master
 
   - name: my-timer
-      type: time
-      source:
-        interval: 2m
+    type: time
+    source:
+      interval: 2m
 
 jobs:
   - name: job-uname
     public: true
     plan:
       - get: resource-uname
+      - get: my-timer
       - task: uname
         file: resource-uname/task.yml

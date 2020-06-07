@@ -6,11 +6,15 @@ resources:
       uri: https://github.com/derekhawkesworth-vioohnet/concourse.git
       branch: master
 
+  - name: my-timer
+      type: time
+      source:
+        interval: 2m
+
 jobs:
   - name: job-uname
     public: true
     plan:
       - get: resource-uname
-        trigger: true
       - task: uname
         file: resource-uname/task.yml
